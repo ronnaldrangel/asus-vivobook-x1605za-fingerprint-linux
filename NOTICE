@@ -1,0 +1,24 @@
+This repository contains changes derived from libfprint and from the
+goodix-fp-linux-dev SIGFM fork.
+
+Upstream libfprint:
+  https://gitlab.freedesktop.org/libfprint/libfprint
+  License: GNU Lesser General Public License, version 2.1 or later.
+
+SIGFM fork:
+  https://github.com/goodix-fp-linux-dev/libfprint
+  Base commit: 07306bbc9256942595e31fb0f407b364ffa24d07
+  License: GNU Lesser General Public License, version 2.1 or later.
+
+ELAN SPI reverse engineering:
+  https://github.com/mincrmatt12/elan-spi-fingerprint
+
+eFSA80SC reference work:
+  https://github.com/r4nd3l/elan-3104-fingerprint-linux
+  https://github.com/pesoiq/asus-expertbook-elan322d-fingerprint-linux
+
+Local changes for ASUS Vivobook X1605ZA / ELAN7001 / 04F3:3212:
+  Copyright (C) 2026 ronnaldrangel and contributors.
+
+The changes in this repository are distributed under the GNU Lesser General
+Public License, version 2.1 or later. See LICENSE.

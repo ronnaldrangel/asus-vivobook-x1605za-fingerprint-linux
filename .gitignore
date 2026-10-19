@@ -1,0 +1,11 @@
+build/
+build*/
+work/
+__pycache__/
+*.pyc
+*.pgm
+*.png
+*.log
+.cache/
+.venv/
+dist/
