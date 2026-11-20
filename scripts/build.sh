@@ -29,6 +29,9 @@ git -C "$SRC_DIR" checkout -f "$COMMIT"
 git -C "$SRC_DIR" apply --check "$PATCH"
 git -C "$SRC_DIR" apply "$PATCH"
 
+# Support both OpenCV 5 (e.g. Arch Linux) and OpenCV 4 (e.g. Ubuntu/Debian)
+sed -i "s/dependency('opencv4'/dependency('opencv5', 'opencv4'/" "$SRC_DIR/libfprint/sigfm/meson.build"
+
 # Debian/Ubuntu ships doctest without a pkg-config file.
 PKG_CONFIG_DIR="$BUILD_ROOT/pkgconfig"
 mkdir -p "$PKG_CONFIG_DIR"

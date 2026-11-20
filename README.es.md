@@ -90,18 +90,18 @@ estados de swipe en un sensor de área.
 | PID HID/touchpad | `04F3:3212` |
 | Sensor | `eFSA80SC`, 80×80 |
 | Bus | SPI (`spi-ELAN7001:00`, `/dev/spidev0.0`) |
-| Sistema | Ubuntu 26.04.1 LTS |
-| Kernel | 7.0.0-38-generic |
+| Sistema | Ubuntu 26.04.1 LTS / Arch Linux |
+| Kernel | 7.0.0-38-generic / 7.2.11-arch1-1 |
 | fprintd | 1.94.5 |
-| Base libfprint | 1.95.1 + rama SIGFM |
-| Escritorio | GNOME 50 / Wayland |
+| Base libfprint | 1.95.1 + rama SIGFM (OpenCV 4 y OpenCV 5) |
+| Escritorio | GNOME 50 / Hyprland (Wayland) |
 
 El parche está limitado a `ELAN7001` + `04F3:3212`. Otros sensores `eFSA80SC`
 pueden necesitar otro PID y no están probados.
 
 ## Instalación rápida
 
-Requisitos: Ubuntu/Debian con `apt`, `initramfs-tools`, sudo y reinicio.
+Requisitos: Ubuntu/Debian (`apt`) o Arch Linux (`pacman`), y `sudo`.
 
 ```bash
 git clone https://github.com/ronnaldrangel/asus-vivobook-x1605za-fingerprint-linux.git

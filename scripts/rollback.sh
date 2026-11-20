@@ -22,17 +22,19 @@ rm -rf -- "$PREFIX"
 rm -f -- "$MODPROBE_FILE"
 rm -rf -- /var/lib/fprint/debug /run/elan3212
 
-if [[ -f "$INITRAMFS_MODULES.elan3212.bak" ]]; then
-  cp -a "$INITRAMFS_MODULES.elan3212.bak" "$INITRAMFS_MODULES"
-else
-  sed -i '/^idma64$/d;/^spidev$/d' "$INITRAMFS_MODULES"
+if [[ -f "$INITRAMFS_MODULES" ]]; then
+  if [[ -f "$INITRAMFS_MODULES.elan3212.bak" ]]; then
+    cp -a "$INITRAMFS_MODULES.elan3212.bak" "$INITRAMFS_MODULES"
+  else
+    sed -i '/^idma64$/d;/^spidev$/d' "$INITRAMFS_MODULES"
+  fi
+  command -v update-initramfs >/dev/null 2>&1 && update-initramfs -u -k "$(uname -r)"
 fi
 
 if [[ -f "$PAM_FILE.elan3212.bak" ]]; then
   cp -a "$PAM_FILE.elan3212.bak" "$PAM_FILE"
 fi
 
-update-initramfs -u -k "$(uname -r)"
 systemctl daemon-reload
 systemctl start fprintd.service 2>/dev/null || true
 

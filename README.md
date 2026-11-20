@@ -92,18 +92,18 @@ being driven through the swipe state machine.
 | Touchpad/HID PID | `04F3:3212` |
 | Sensor | `eFSA80SC`, 80×80 |
 | Bus | SPI (`spi-ELAN7001:00`, `/dev/spidev0.0`) |
-| OS | Ubuntu 26.04.1 LTS |
-| Kernel | 7.0.0-38-generic |
+| OS | Ubuntu 26.04.1 LTS / Arch Linux |
+| Kernel | 7.0.0-38-generic / 7.2.11-arch1-1 |
 | fprintd | 1.94.5 |
-| libfprint base | 1.95.1 + SIGFM fork |
-| Desktop | GNOME 50 / Wayland |
+| libfprint base | 1.95.1 + SIGFM fork (OpenCV 4 & OpenCV 5) |
+| Desktop | GNOME 50 / Hyprland (Wayland) |
 
 The patch is intentionally limited to `ELAN7001` + `04F3:3212`. Similar
 `eFSA80SC` sensors may work with a different PID entry, but they are untested.
 
 ## Quick install
 
-Requirements: Ubuntu/Debian with `apt`, `initramfs-tools`, sudo, and a reboot.
+Requirements: Ubuntu/Debian (`apt`) or Arch Linux (`pacman`), and `sudo`.
 
 ```bash
 git clone https://github.com/ronnaldrangel/asus-vivobook-x1605za-fingerprint-linux.git
